@@ -80,10 +80,7 @@ WSGI_APPLICATION = 'notes.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': {env.db()}
 }
 
 
@@ -124,3 +121,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIR = [BASE_DIR / 'static']
+
+
+AUTH_USER_MODEL = 'users.User'
+
+
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
