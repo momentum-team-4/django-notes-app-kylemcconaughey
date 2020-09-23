@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.conf import settings
 from django.urls import include, path
+# from notes import views as notes_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path('', notes_views.notes_list, name='notes_list'),
+    # path('notes/<pk>/', notes_views.notes_details, name='notes_detail')
     # path('notes/', include('notes.urls')),
 ]
 
