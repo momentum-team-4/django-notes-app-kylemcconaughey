@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # project apps
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -79,9 +82,7 @@ WSGI_APPLICATION = 'notes.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {env.db()}
-}
+DATABASES = {'default': env.db()}
 
 
 # Password validation
