@@ -4,5 +4,7 @@
 {% block content %}
 <h2 class='noteTitle'>{{ note.title }}</h2>
 <p class='noteBody'>{{ note.body }}</p>
-<a href="{% url 'notes_list' %}">Back to all the Notes</a>
+<br>
+<a href="{% url  'notes_update' pk=note.pk %}">Edit this note</a>
+<a href="{% url 'notes_list' %}">Back to the rest of your notes</a>
 {% endblock %}

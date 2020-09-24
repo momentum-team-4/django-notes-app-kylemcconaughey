@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Note
 from .forms import NoteForm
 from django.contrib.messages import success
@@ -37,7 +37,6 @@ def notes_update(request, pk):
         if form.is_valid():
             form.save()
             success(request, 'Note has been updated!')
-
             return redirect(to='notes_list')
 
     return render(request, 'notes/notes_update.html', {'form': form})

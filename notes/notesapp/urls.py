@@ -25,7 +25,7 @@ urlpatterns = [
     path('', notes_views.notes_list, name='notes_list'),
     path('notes/<int:pk>/', notes_views.note_details, name='note_details'),
     path('notes/create/', notes_views.notes_create, name='notes_create'),
-    path('notes/update/<int:pk/', notes_views.notes_update, name='notes_update'),
+    path('notes/update/<int:pk>/', notes_views.notes_update, name='notes_update'),
     path('notes/delete/<int:pk/', notes_views.notes_delete, name='notes_delete'),
 ]
 
