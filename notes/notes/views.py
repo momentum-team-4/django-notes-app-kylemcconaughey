@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Note
 from .forms import NoteForm
+from django.contrib.messages import success
 
 
 def notes_list(request):
@@ -25,9 +26,30 @@ def notes_create(request):
 
 
 def notes_update(request, pk):
-    # needs to update the updated_at variable/column (that I need to create)
-    pass
+    note = get_object_or_404(Note, pk=pk)
+
+    if request.method == 'GET':
+        form = NoteForm(instance=note)
+
+    else:
+        form = NoteForm(data=request.POST, instance=note)
+
+        if form.is_valid():
+            form.save()
+            success(request, 'Note has been updated!')
+
+            return redirect(to='notes_list')
+
+    return render(request, 'notes/notes_update.html', {'form': form})
 
 
 def notes_delete(request, pk):
-    pass
+    if request.method == 'GET':
+        return render(request, 'notes/notes_delete.html')
+
+    else:
+        note = get_object_or_404(Note, pk=pk)
+        note.delete()
+        success(request, 'Note has been deleted!')
+
+        return redirect(to='notes_list')
