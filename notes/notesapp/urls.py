@@ -23,7 +23,7 @@ from users import views as users_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', notes_views.notes_list, name='notes_list'),
-    path('notes/<int:pk>/', notes_views.notes_details, name='notes_details'),
+    path('notes/<int:pk>/', notes_views.note_details, name='note_details'),
     path('notes/create/', notes_views.notes_create, name='notes_create'),
 ]
 
