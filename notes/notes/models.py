@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime, timedelta
 
 
 class Note(models.Model):
@@ -8,10 +9,12 @@ class Note(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def niceCreated(self):
-        return self.created_at.strftime("Created on %A at %I:%M %p %z")
+        nice_created = self.created_at - timedelta(hours=4)
+        return nice_created.strftime("Created on %A at %I:%M %p")
 
     def niceUpdated(self):
-        return self.updated_at.strftime("Last updated on %A at %I:%M %p %z")
+        nice_updated = self.updated_at - timedelta(hours=4)
+        return nice_updated.strftime("Last updated on %A at %I:%M %p")
 
     def __str__(self):
         return f"{self.title}"
