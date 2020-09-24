@@ -2,11 +2,13 @@
 
 {% block content %}
 <h1>Notes!</h1>
+
 {% for note in notes %}
-<h2><a href="{% url 'note_details' pk=note.pk %}">{{ note.title }}</a></h2>
-<p>{{ note.body|truncatewords:10 }}</p>
+<h2 class='noteTitle'><a href="{% url 'note_details' pk=note.pk %}">{{ note.title }}</a></h2>
+<p class='noteBody'>{{ note.body|truncatewords:10 }}</p>
 {% endfor %}
+
 <br>
-<p><a href="{% url 'notes_create' %}">Add a Note</a></p>
+<button class='newNote'><a href="{% url 'notes_create' %}">Add a Note</a></button>
 
 {% endblock %}
