@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class NotesappConfig(AppConfig):
-    name = 'notesapp'
+class NotesConfig(AppConfig):
+    name = 'notes'
