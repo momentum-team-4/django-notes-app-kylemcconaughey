@@ -4,8 +4,8 @@
 {% block content %}
 <h2 class='noteTitle'>{{ note.title }}</h2>
 <p class='noteBody'>{{ note.body }}</p>
-<p class='time'>Created at {{ note.created_at }}</p>
-<p class='time'>Edited at {{ note.updated_at }}</p>
+<p class='time'>{{ note.niceCreated }}</p>
+<p class='time'>{{ note.niceUpdated }}</p>
 
 <div class='detailsLinks'>
     <button><a href="{% url  'notes_delete' pk=note.pk %}">Delete this note</a></button>

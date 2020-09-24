@@ -17,10 +17,17 @@ def note_details(request, pk):
 
 def notes_create(request):
     if request.method == "GET":
-        form = None
+        form = NoteForm()
 
     else:
-        form = None
+        form = NoteForm(data=request.POST)
+
+        if form.is_valid():
+
+            form.save()
+
+            success(request, "Your note was created!")
+            return redirect(to='notes_list')
 
     return render(request, "notes/notes_create.html", {"form": form})
 
