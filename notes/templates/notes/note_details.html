@@ -4,7 +4,12 @@
 {% block content %}
 <h2 class='noteTitle'>{{ note.title }}</h2>
 <p class='noteBody'>{{ note.body }}</p>
-<br>
-<a href="{% url  'notes_update' pk=note.pk %}">Edit this note</a>
-<a href="{% url 'notes_list' %}">Back to the rest of your notes</a>
+<p class='time'>Created at {{ note.created_at }}</p>
+<p class='time'>Edited at {{ note.updated_at }}</p>
+
+<div class='detailsLinks'>
+    <button><a href="{% url  'notes_delete' pk=note.pk %}">Delete this note</a></button>
+    <button><a href="{% url  'notes_update' pk=note.pk %}">Edit this note</a></button>
+    <button><a href="{% url 'notes_list' %}">Back to the rest of your notes</a></button>
+</div>
 {% endblock %}

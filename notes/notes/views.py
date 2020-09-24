@@ -50,5 +50,4 @@ def notes_delete(request, pk):
         note = get_object_or_404(Note, pk=pk)
         note.delete()
         success(request, 'Note has been deleted!')
-
         return redirect(to='notes_list')
