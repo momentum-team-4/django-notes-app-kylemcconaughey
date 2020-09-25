@@ -80,7 +80,7 @@ def notes_search(request):
         else:
             results = results.filter(title=title_text)
 
-        if body_search_criteria == 'contains':
+        if body_search_crit == 'contains':
             results = results.filter(body__contains=body_text)
 
         else:

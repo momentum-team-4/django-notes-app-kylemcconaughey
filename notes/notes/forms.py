@@ -17,7 +17,7 @@ class NoteSearchForm(Form):
         ('exact match', 'exact match'),
     ]
 
-    title = CharField()
+    title = CharField(required=False)
     title_search_by = ChoiceField(choices=SEARCH_BY_CHOICES)
-    body = CharField()
+    body = CharField(required=False)
     body_search_by = ChoiceField(choices=SEARCH_BY_CHOICES)

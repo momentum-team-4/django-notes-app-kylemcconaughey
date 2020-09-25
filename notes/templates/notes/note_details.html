@@ -3,10 +3,14 @@
 <h2 class='pageTitle'>Note Details</h2>
 
 {% block content %}
-<h2 class='noteTitle'>{{ note.title }}</h2>
-<p class='noteBody'>{{ note.body }}</p>
-<p class='time'>{{ note.niceCreated }}</p>
-<p class='time'>{{ note.niceUpdated }}</p>
+<div class='noteDetails'>
+    <h2 class='noteTitle'>{{ note.title }}</h2>
+    <p class='noteBody'>{{ note.body }}</p>
+</div>
+<div class='noteTiming'>
+    <p class='time'>{{ note.niceCreated }}</p>
+    <p class='time'>{{ note.niceUpdated }}</p>
+</div>
 
 <div class='detailsLinks'>
     <button><a href="{% url  'notes_delete' pk=note.pk %}">Delete this note</a></button>
