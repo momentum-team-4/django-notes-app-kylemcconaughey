@@ -89,10 +89,9 @@ h2 {
     margin: 0.5rem;
 }
 
-.noteBody {
-
-    /* just to see if it works lol */
-}
+/* .noteBody {
+    font-size: 2rem;
+} */
 
 .newNote {
     width: 25%;
@@ -125,8 +124,19 @@ h2 {
 
 }
 
-.detailsLinks {
+.detailsLinks a {
     display: flex;
+    color: #f7f4eaff;
+}
 
+.detailsLinks button {
+    border-radius: 15px;
+    padding: 0.25rem;
+    font-size: 1rem;
+    border: outset 0.25rem;
+    margin: 1rem;
+    margin-top: 0.5rem;
+    box-shadow: 3px 7px 3px;
+    background-color: rgb(128, 162, 212);
 }
 
