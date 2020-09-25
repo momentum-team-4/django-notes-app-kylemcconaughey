@@ -15,8 +15,12 @@
     </div>
     {% endfor %}
 </div>
+<div class='spacing'></div>
 
 <br>
-<button class='newNote'><a href="{% url 'notes_create' %}" style="text-decoration:none">Add a Note</a></button>
+<div class='fab-container'>
+    <button class='newNote'><a href="{% url 'notes_create' %}" style="text-decoration:none">Add a Note</a></button>
+</div>
+
 
 {% endblock %}
