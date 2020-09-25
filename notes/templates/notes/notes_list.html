@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Notes!</h1>
+<h1 class='pageTitle'>Notes!</h1>
 
 {% for note in notes %}
 <h2 class='noteTitle'><a href="{% url 'note_details' pk=note.pk %}">{{ note.title }}</a></h2>

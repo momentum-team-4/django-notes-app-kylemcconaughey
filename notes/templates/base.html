@@ -12,9 +12,35 @@
     <title>Notes!</title>
 </head>
 
+<header>
+    <h1>Notable</h1>
+    <nav>
+        <button><a href="{% url 'notes_list' %}">Notes Index</a></button>
+        <button><a href="{% url 'notes_search' %}">Search Notes</a></button>
+    </nav>
+</header>
+
 <body>
-    {% block content %}
-    {% endblock %}
+
+    <div class='messages'>
+        {% if messages %}
+        {% for message in messages %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+        <p class='error'>{{ message }}</p>
+        {% elif message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+        <p class='success'>{{ message }}</p>
+        {% else %}
+        <p>{{ message }}</p>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+    </div>
+
+    <div class='blockContent'>
+        {% block content %}
+        {% endblock %}
+    </div>
+
 </body>
 
 </html>
